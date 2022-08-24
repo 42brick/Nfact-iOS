@@ -5,7 +5,12 @@
 ## Build generated
 build/
 DerivedData/
+<<<<<<< HEAD
 Pods/
+=======
+pods/
+
+>>>>>>> 6a9de98ee92c843ae26a81742114dfa6aae3ac49
 
 ## Various settings
 *.pbxuser
