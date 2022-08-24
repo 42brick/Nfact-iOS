@@ -10,12 +10,24 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            Text("hoony's home")
-                .tabItem{
-                    Image(systemName: "house")
-                    Text("홈")
+          HomeView()
+                .environmentObject(HomeViewModel())
+            .tabItem {
+              Image(systemName: "1.square.fill")
+              Text("홈")
+            }
+          Text("Another Tab")
+            .tabItem {
+              Image(systemName: "2.square.fill")
+              Text("Second")
+            }
+          Text("The Last Tab")
+            .tabItem {
+              Image(systemName: "3.square.fill")
+              Text("Third")
             }
         }
+        .font(.headline)
     }
 }
 
