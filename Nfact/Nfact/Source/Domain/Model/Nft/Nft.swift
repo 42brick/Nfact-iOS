@@ -33,7 +33,7 @@ struct NftResult: Codable {
     let total, page, pageSize: Int
     let cursor: JSONNull?
     let result: [Nft]
-    let status: String
+    let status: String?
 
     enum CodingKeys: String, CodingKey {
         case total, page
@@ -44,13 +44,15 @@ struct NftResult: Codable {
 
 // MARK: - Nft
 struct Nft: Codable {
-    let tokenAddress, tokenID, amount, ownerOf: String
+    let tokenAddress, tokenID: String
+    let amount: String?
+    let ownerOf: String
     let tokenHash, blockNumberMinted, blockNumber: String
-    let contractType: JSONNull?
+    let contractType: String?
     let name, symbol: String
-    let tokenURI: String
-    let metadata: String
-    let lastTokenURISync: JSONNull?
+    let tokenURI: String?
+    let metadata: String?
+    let lastTokenURISync: String?
     let lastMetadataSync: String
 
     enum CodingKeys: String, CodingKey {

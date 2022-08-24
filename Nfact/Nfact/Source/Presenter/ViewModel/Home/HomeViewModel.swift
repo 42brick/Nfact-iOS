@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 
 class HomeViewModel: ObservableObject {
+    private var repository: RepositoryProvider = RepositoryProvider.shared
     private var cancellables: [AnyCancellable] = []
     
     enum Input {
@@ -30,11 +31,24 @@ class HomeViewModel: ObservableObject {
     }
     
     init() {
+        print("[D] hello")
         bindOutputs()
+        
+        repository.nftRepository.getNftData(request: .init(addr: "0xCB76200a088672E18E57A4381264aa82eAE14875", symbol: .eth)).sink { (completion) in
+            switch completion {
+            case .failure(let error):
+                print("oops got an error \(error.localizedDescription)")
+            case .finished:
+                print("nothing much to do here")
+            }
+        } receiveValue: { (response) in
+            print("got my response here \(response)")
+        }
+        .store(in: &cancellables)
+//        .store(in: &subscriptions)
     }
     
     private func bindOutputs() {
-        
 //        let isError = didTapIndexSubject
 //            .map { $0 == 4 }// map을 사용하여 기존 Int형을 Bool형으로 변환해줍니다..
 //                .share() // share을 사용해서 해당 Publisher를 공유해줍니다.

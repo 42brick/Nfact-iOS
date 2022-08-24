@@ -20,7 +20,7 @@ protocol NftRepositable {
 }
 
 class NftRepository: NftRepositable {
-    private var networkRequest: Requestable
+    var networkRequest: Requestable
     
     // MARK: - Initializer
     

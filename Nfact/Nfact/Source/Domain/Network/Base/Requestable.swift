@@ -14,7 +14,7 @@ protocol Requestable {
     func request<T: Codable>(_ req: NetworkAPI) -> AnyPublisher<T, NetworkError>
 }
 
-class DefaultRequestable: Requestable {
+class DefaultNetworkRequest: Requestable {
     var requestTimeOut: Float = 20
     
     func request<T>(_ req: NetworkAPI) -> AnyPublisher<T, NetworkError> where T : Decodable, T : Encodable {
@@ -27,6 +27,7 @@ class DefaultRequestable: Requestable {
                        Fail<T, NetworkError>(error: NetworkError.badURL("Invalid Url"))
                    )
                }
+        print("[D] \(req.asURLRequest(with: url))")
                // We use the dataTaskPublisher from the URLSession which gives us a publisher to play around with.
                return URLSession.shared
                    .dataTaskPublisher(for: req.asURLRequest(with: url))
@@ -40,7 +41,8 @@ class DefaultRequestable: Requestable {
                    .decode(type: T.self, decoder: JSONDecoder())
                    .mapError { error in
                               // return error if json decoding fails
-                       NetworkError.invalidJSON(String(describing: error))
+                       print("[D] \(error)")
+                       return NetworkError.invalidJSON(String(describing: error))
                    }
                    .eraseToAnyPublisher()
     }

@@ -11,6 +11,7 @@ struct ContentView: View {
     var body: some View {
         TabView {
           HomeView()
+                .environmentObject(HomeViewModel())
             .tabItem {
               Image(systemName: "1.square.fill")
               Text("홈")
