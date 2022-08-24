@@ -31,7 +31,7 @@ struct NftData: Codable {
 // MARK: - NftResult
 struct NftResult: Codable {
     let total, page, pageSize: Int
-    let cursor: JSONNull?
+    let cursor: String?
     let result: [Nft]
     let status: String?
 
