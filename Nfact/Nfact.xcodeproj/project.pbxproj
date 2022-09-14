@@ -20,8 +20,11 @@
 		7048804828B61416001CD366 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048804728B61416001CD366 /* ContentType.swift */; };
 		7048804B28B61539001CD366 /* Encodable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048804A28B61539001CD366 /* Encodable+Ext.swift */; };
 		7048805028B61800001CD366 /* NftAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048804F28B61800001CD366 /* NftAPI.swift */; };
+		7083405328D23C58004609D3 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7083405228D23C58004609D3 /* UserSettings.swift */; };
 		70D0229F28B6195D0089E7E4 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D0229E28B6195D0089E7E4 /* NetworkAPI.swift */; };
 		70D022A228B6265C0089E7E4 /* RepositoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D022A128B6265C0089E7E4 /* RepositoryProvider.swift */; };
+		70E1127528D0CD8E0075586D /* CreateWalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1127428D0CD8E0075586D /* CreateWalletView.swift */; };
+		70E1127828D0D1810075586D /* CreateWalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1127728D0D1810075586D /* CreateWalletViewModel.swift */; };
 		70E5701828ACBF8C00D32BDA /* NfactApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E5701728ACBF8C00D32BDA /* NfactApp.swift */; };
 		70E5701A28ACBF8C00D32BDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E5701928ACBF8C00D32BDA /* ContentView.swift */; };
 		70E5701C28ACBF8D00D32BDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70E5701B28ACBF8D00D32BDA /* Assets.xcassets */; };
@@ -71,8 +74,11 @@
 		7048804728B61416001CD366 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
 		7048804A28B61539001CD366 /* Encodable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Ext.swift"; sourceTree = "<group>"; };
 		7048804F28B61800001CD366 /* NftAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftAPI.swift; sourceTree = "<group>"; };
+		7083405228D23C58004609D3 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		70D0229E28B6195D0089E7E4 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		70D022A128B6265C0089E7E4 /* RepositoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryProvider.swift; sourceTree = "<group>"; };
+		70E1127428D0CD8E0075586D /* CreateWalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletView.swift; sourceTree = "<group>"; };
+		70E1127728D0D1810075586D /* CreateWalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletViewModel.swift; sourceTree = "<group>"; };
 		70E5701428ACBF8C00D32BDA /* Nfact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nfact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70E5701728ACBF8C00D32BDA /* NfactApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfactApp.swift; sourceTree = "<group>"; };
 		70E5701928ACBF8C00D32BDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -160,31 +166,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		7017EDAF28B5EE170031959E /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				7017EDB428B5EE8D0031959E /* Home */,
-				7048802C28B5F8DA001CD366 /* BaseViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		7017EDB128B5EE5D0031959E /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7017EDB328B5EE7F0031959E /* Reusable */,
-				7017EDB228B5EE790031959E /* Home */,
-			);
-			name = View;
-			path = Home/View;
-			sourceTree = "<group>";
-		};
 		7017EDB228B5EE790031959E /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7048802228B5F2A5001CD366 /* HomeViewModel.swift */,
 				70E5704228ACC45100D32BDA /* HomeView.swift */,
 			);
-			path = Home;
+			name = Home;
+			path = Home/View/Home;
 			sourceTree = "<group>";
 		};
 		7017EDB328B5EE7F0031959E /* Reusable */ = {
@@ -193,14 +182,6 @@
 				70E5704428ACC9D300D32BDA /* MyNftListView.swift */,
 			);
 			path = Reusable;
-			sourceTree = "<group>";
-		};
-		7017EDB428B5EE8D0031959E /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				7048802228B5F2A5001CD366 /* HomeViewModel.swift */,
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		7048803228B5FED5001CD366 /* Base */ = {
@@ -217,6 +198,7 @@
 		7048803628B5FF94001CD366 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				7083405128D23C50004609D3 /* Config */,
 				7048804928B6152A001CD366 /* Extension */,
 				7017EDAB28B5EDF20031959E /* Domain */,
 				70E5704128ACC33C00D32BDA /* Presenter */,
@@ -250,6 +232,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		7083405128D23C50004609D3 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				7083405228D23C58004609D3 /* UserSettings.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		70D022A028B620060089E7E4 /* Nft */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +265,31 @@
 				7048804F28B61800001CD366 /* NftAPI.swift */,
 			);
 			path = Nft;
+			sourceTree = "<group>";
+		};
+		70E1127228D0CD5D0075586D /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				70E1127328D0CD680075586D /* CreateWallet */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		70E1127328D0CD680075586D /* CreateWallet */ = {
+			isa = PBXGroup;
+			children = (
+				70E1127428D0CD8E0075586D /* CreateWalletView.swift */,
+				70E1127728D0D1810075586D /* CreateWalletViewModel.swift */,
+			);
+			path = CreateWallet;
+			sourceTree = "<group>";
+		};
+		70E1127628D0CDAA0075586D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7048802C28B5F8DA001CD366 /* BaseViewModel.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		70E5700B28ACBF8C00D32BDA = {
@@ -341,8 +356,10 @@
 		70E5704128ACC33C00D32BDA /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				7017EDAF28B5EE170031959E /* ViewModel */,
-				7017EDB128B5EE5D0031959E /* View */,
+				7017EDB328B5EE7F0031959E /* Reusable */,
+				70E1127628D0CDAA0075586D /* Base */,
+				70E1127228D0CD5D0075586D /* Setting */,
+				7017EDB228B5EE790031959E /* Home */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -569,9 +586,12 @@
 				7048802F28B5FE06001CD366 /* NftRepository.swift in Sources */,
 				7048802928B5F71C001CD366 /* Nft.swift in Sources */,
 				70E5704528ACC9D300D32BDA /* MyNftListView.swift in Sources */,
+				70E1127828D0D1810075586D /* CreateWalletViewModel.swift in Sources */,
 				7048803128B5FE8C001CD366 /* Requestable.swift in Sources */,
+				70E1127528D0CD8E0075586D /* CreateWalletView.swift in Sources */,
 				7048805028B61800001CD366 /* NftAPI.swift in Sources */,
 				7048804828B61416001CD366 /* ContentType.swift in Sources */,
+				7083405328D23C58004609D3 /* UserSettings.swift in Sources */,
 				7048802328B5F2A6001CD366 /* HomeViewModel.swift in Sources */,
 				70D0229F28B6195D0089E7E4 /* NetworkAPI.swift in Sources */,
 				7048802D28B5F8DA001CD366 /* BaseViewModel.swift in Sources */,
@@ -749,7 +769,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -782,7 +802,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
