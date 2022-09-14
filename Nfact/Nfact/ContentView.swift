@@ -16,10 +16,11 @@ struct ContentView: View {
               Image(systemName: "1.square.fill")
               Text("홈")
             }
-          Text("Another Tab")
+          CreateWalletView()
+                .environmentObject(CreateWalletViewModel())
             .tabItem {
               Image(systemName: "2.square.fill")
-              Text("Second")
+              Text("지갑주소입력")
             }
           Text("The Last Tab")
             .tabItem {
