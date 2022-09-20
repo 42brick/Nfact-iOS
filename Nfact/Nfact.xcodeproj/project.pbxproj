@@ -33,7 +33,7 @@
 		70E5703328ACBF8E00D32BDA /* NfactUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E5703228ACBF8E00D32BDA /* NfactUITests.swift */; };
 		70E5703528ACBF8E00D32BDA /* NfactUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E5703428ACBF8E00D32BDA /* NfactUITestsLaunchTests.swift */; };
 		70E5704328ACC45100D32BDA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E5704228ACC45100D32BDA /* HomeView.swift */; };
-		70E5704528ACC9D300D32BDA /* MyNftListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E5704428ACC9D300D32BDA /* MyNftListView.swift */; };
+		70E5704528ACC9D300D32BDA /* NftListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E5704428ACC9D300D32BDA /* NftListView.swift */; };
 		79CF3EE3FCA33F6CEF539A70 /* Pods_NfactTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92BD136FD516E694F5B4B361 /* Pods_NfactTests.framework */; };
 		9392666B5D551BE10D19C1BD /* Pods_Nfact.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E3EC55F4E3E71EC93366F3 /* Pods_Nfact.framework */; };
 		B378C2ADF076B6CA79FA6F0D /* Pods_Nfact_NfactUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE2F8C536C95F22024E29BB /* Pods_Nfact_NfactUITests.framework */; };
@@ -90,7 +90,7 @@
 		70E5703228ACBF8E00D32BDA /* NfactUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfactUITests.swift; sourceTree = "<group>"; };
 		70E5703428ACBF8E00D32BDA /* NfactUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfactUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		70E5704228ACC45100D32BDA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		70E5704428ACC9D300D32BDA /* MyNftListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNftListView.swift; sourceTree = "<group>"; };
+		70E5704428ACC9D300D32BDA /* NftListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftListView.swift; sourceTree = "<group>"; };
 		74326022C693C4684DA22644 /* Pods-Nfact.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nfact.debug.xcconfig"; path = "Target Support Files/Pods-Nfact/Pods-Nfact.debug.xcconfig"; sourceTree = "<group>"; };
 		8FE2F8C536C95F22024E29BB /* Pods_Nfact_NfactUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nfact_NfactUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BD136FD516E694F5B4B361 /* Pods_NfactTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NfactTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,7 +179,7 @@
 		7017EDB328B5EE7F0031959E /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
-				70E5704428ACC9D300D32BDA /* MyNftListView.swift */,
+				70E5704428ACC9D300D32BDA /* NftListView.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -585,7 +585,7 @@
 				70D022A228B6265C0089E7E4 /* RepositoryProvider.swift in Sources */,
 				7048802F28B5FE06001CD366 /* NftRepository.swift in Sources */,
 				7048802928B5F71C001CD366 /* Nft.swift in Sources */,
-				70E5704528ACC9D300D32BDA /* MyNftListView.swift in Sources */,
+				70E5704528ACC9D300D32BDA /* NftListView.swift in Sources */,
 				70E1127828D0D1810075586D /* CreateWalletViewModel.swift in Sources */,
 				7048803128B5FE8C001CD366 /* Requestable.swift in Sources */,
 				70E1127528D0CD8E0075586D /* CreateWalletView.swift in Sources */,

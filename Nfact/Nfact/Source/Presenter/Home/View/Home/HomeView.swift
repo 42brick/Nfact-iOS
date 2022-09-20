@@ -13,8 +13,8 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             TabView {
-                MyNftListView()
-                MyNftListView()
+                NftListView(nfts: homeViewModel.nfts)
+                NftListView(nfts: homeViewModel.nfts)
             }
             .tabViewStyle(.page(indexDisplayMode: .always))
             .navigationTitle("홈")
