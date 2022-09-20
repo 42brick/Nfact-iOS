@@ -11,19 +11,19 @@ import Combine
 class UserSettings: ObservableObject {
     static let shared = UserSettings()
     
-    @Published var firstWalletAddress: String {
+    var firstWalletAddress: String {
         didSet {
             UserDefaults.standard.set(firstWalletAddress, forKey: "firstWalletAddress")
         }
     }
     
-    @Published var secondWalletAddress: String {
+    var secondWalletAddress: String {
         didSet {
             UserDefaults.standard.set(secondWalletAddress, forKey: "secondWalletAddress")
         }
     }
     
-    @Published var thirdWalletAddress: String {
+    var thirdWalletAddress: String {
         didSet {
             UserDefaults.standard.set(thirdWalletAddress, forKey: "thirdWalletAddress")
         }

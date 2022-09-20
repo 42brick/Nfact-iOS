@@ -13,7 +13,7 @@ class CreateWalletViewModel: ObservableObject {
     private var repository: RepositoryProvider = RepositoryProvider.shared
     private var cancellables: [AnyCancellable] = []
     
-    @Published var firstWalletAddress: String = "124241"
+    @Published var firstWalletAddress: String = String()
     @Published var secondWalletAddress: String = String()
     @Published var thirdWalletAddress: String = String()
     
@@ -31,9 +31,9 @@ class CreateWalletViewModel: ObservableObject {
         tapButtonSubject
             .sink(receiveValue: { [weak self] in
                 guard let this = self else { return }
-                print(this.firstWalletAddress)
-                print(this.secondWalletAddress)
-                print(this.thirdWalletAddress)
+                print("[D] \(this.firstWalletAddress)")
+                print("[D] \(this.secondWalletAddress)")
+                print("[D] \(this.thirdWalletAddress)")
                 
                 this.userSettings.firstWalletAddress = this.firstWalletAddress
                 this.userSettings.secondWalletAddress = this.secondWalletAddress

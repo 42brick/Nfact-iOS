@@ -7,10 +7,12 @@
 
 import SwiftUI
 
-struct MyNftListItemView: View {
+struct NftListItemView: View {
+    let nft: Nft
+    
     var body: some View {
         HStack {
-            Text("1")
+            Text("0")
                 .font(.subheadline)
                 .foregroundColor(.white)
                 .padding()
@@ -20,11 +22,11 @@ struct MyNftListItemView: View {
                         .padding(6)
                 )
             VStack {
-                Text("test")
+                Text("\(nft.name)")
                     .font(.title3)
                     .foregroundColor(.black)
                 
-                Text("ddd")
+                Text("\(nft.symbol)")
                     .font(.body)
                     .foregroundColor(.black)
             }
@@ -40,12 +42,13 @@ struct MyNftListItemView: View {
     }
 }
 
-struct MyNftListView: View {
+struct NftListView: View {
+    let nfts: [Nft]
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             LazyVStack {
-                ForEach(0..<20) { i in
-                    MyNftListItemView()
+                ForEach(nfts, id: \.self) { nft in
+                    NftListItemView(nft: nft)
                         .padding(.horizontal, 20)
                 }
             }

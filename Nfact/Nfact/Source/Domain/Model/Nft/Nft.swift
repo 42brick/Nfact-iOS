@@ -25,7 +25,12 @@ enum NftSymbolType: String, Codable {
 struct NftData: Codable {
     let chain: NftChainType
     let symbol: NftSymbolType
-    let result: NftResult
+    let nftResult: NftResult
+    
+    enum CodingKeys: String, CodingKey {
+        case chain, symbol
+        case nftResult = "result"
+    }
 }
 
 // MARK: - NftResult
@@ -43,8 +48,9 @@ struct NftResult: Codable {
 }
 
 // MARK: - Nft
-struct Nft: Codable {
-    let tokenAddress, tokenID: String
+struct Nft: Codable, Hashable {
+    let id: String
+    let tokenAddress: String
     let amount: String?
     let ownerOf: String
     let tokenHash, blockNumberMinted, blockNumber: String
@@ -56,8 +62,8 @@ struct Nft: Codable {
     let lastMetadataSync: String
 
     enum CodingKeys: String, CodingKey {
+        case id = "token_id"
         case tokenAddress = "token_address"
-        case tokenID = "token_id"
         case amount
         case ownerOf = "owner_of"
         case tokenHash = "token_hash"

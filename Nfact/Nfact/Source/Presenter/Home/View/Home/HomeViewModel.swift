@@ -12,40 +12,36 @@ class HomeViewModel: ObservableObject {
     private var repository: RepositoryProvider = RepositoryProvider.shared
     private var cancellables: [AnyCancellable] = []
     
-    enum Input {
-        case didTap(index: Int)
-    }
-    
-    func apply(from input: Input) {
-        switch input {
-        case .didTap(let index):
-            didTapIndexSubject.send(index)
-        }
-    }
-    
-    private let didTapIndexSubject = PassthroughSubject<Int, Never>()
-
-    struct Output {
-        var myNft: NftData?
-        var isPresentHomeDetailView: Bool = false
-    }
+    @Published var nfts: [Nft] = []
     
     init() {
-        print("[D] hello")
-        bindOutputs()
+        bind()
+//        bindOutputs()
         
-        repository.nftRepository.getNftData(request: .init(addr: "0xCB76200a088672E18E57A4381264aa82eAE14875", symbol: .eth)).sink { (completion) in
+//        repository.nftRepository.getNftData(request: .init(addr: "0xCB76200a088672E18E57A4381264aa82eAE14875", symbol: .eth)).sink { (completion) in
+//            switch completion {
+//            case .failure(let error):
+//                print("oops got an error \(error.localizedDescription)")
+//            case .finished:
+//                print("nothing much to do here")
+//            }
+//        } receiveValue: { (response) in
+//            print("got my response here \(response.nftResult.result)")
+//        }
+//        .store(in: &cancellables)
+    }
+    
+    private func bind() {
+        repository.nftRepository.getNftData(request: .init(addr: UserSettings.shared.firstWalletAddress, symbol: .eth)).sink { (completion) in
             switch completion {
-            case .failure(let error):
-                print("oops got an error \(error.localizedDescription)")
-            case .finished:
-                print("nothing much to do here")
+            case .failure(let error): print(error)
+            case .finished: break
             }
         } receiveValue: { (response) in
-            print("got my response here \(response)")
+            self.nfts = response.nftResult.result
+            print(self.nfts)
         }
         .store(in: &cancellables)
-//        .store(in: &subscriptions)
     }
     
     private func bindOutputs() {
