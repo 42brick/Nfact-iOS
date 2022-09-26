@@ -13,6 +13,7 @@ class HomeViewModel: ObservableObject {
     private var cancellables: [AnyCancellable] = []
     
     @Published var nfts: [Nft] = []
+    @Published var isShowEditView: Bool = false
     
     init() {
         bind()

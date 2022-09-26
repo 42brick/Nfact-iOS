@@ -44,6 +44,7 @@ struct NftListItemView: View {
 
 struct NftListView: View {
     let nfts: [Nft]
+
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             LazyVStack {

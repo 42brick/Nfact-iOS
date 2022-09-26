@@ -8,7 +8,7 @@
 import Foundation
 
 enum NftAPI {
-    case getNftData(GetNftRequest)
+    case getNftData(NftRequest)
 }
 
 extension NftAPI: NetworkAPI {

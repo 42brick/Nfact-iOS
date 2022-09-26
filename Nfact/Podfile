@@ -6,6 +6,7 @@ target 'Nfact' do
   use_frameworks!
 
   # Pods for Nfact
+  pod 'RealmSwift'
 
   target 'NfactTests' do
     inherit! :search_paths

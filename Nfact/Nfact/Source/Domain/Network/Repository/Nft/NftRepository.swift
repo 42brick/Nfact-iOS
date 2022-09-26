@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol NftRepositable {
-    func getNftData(request: GetNftRequest) -> AnyPublisher<NftData, NetworkError>
+    func getNftData(request: NftRequest) -> AnyPublisher<NftData, NetworkError>
 }
 
 class NftRepository: NftRepositable {
@@ -21,7 +21,7 @@ class NftRepository: NftRepositable {
         self.networkRequest = networkRequest
     }
     
-    func getNftData(request: GetNftRequest) -> AnyPublisher<NftData, NetworkError> {
+    func getNftData(request: NftRequest) -> AnyPublisher<NftData, NetworkError> {
         return networkRequest.request(NftAPI.getNftData(request))
     }
 }
