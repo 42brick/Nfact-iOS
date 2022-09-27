@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GetNftRequest: Codable {
+struct NftRequest: Codable {
     let addr: String
-    let symbol: NftSymbolType
+    let symbol: SymbolType
 }

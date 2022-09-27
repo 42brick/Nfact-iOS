@@ -7,14 +7,7 @@
 
 import Foundation
 
-enum NftChainType: String, Codable {
-    case eth = "Ethereum"
-    case bsc = "Binance Smart Chain"
-    case matic = "Polygon"
-    case ftm = "Fantom"
-}
-
-enum NftSymbolType: String, Codable {
+enum SymbolType: String, Codable {
     case eth = "eth"
     case bsc = "bsc"
     case matic = "matic"
@@ -23,8 +16,8 @@ enum NftSymbolType: String, Codable {
 
 // MARK: - NftData
 struct NftData: Codable {
-    let chain: NftChainType
-    let symbol: NftSymbolType
+    let chain: ChainType
+    let symbol: SymbolType
     let nftResult: NftResult
     
     enum CodingKeys: String, CodingKey {

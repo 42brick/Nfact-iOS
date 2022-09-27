@@ -8,13 +8,22 @@
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var homeViewModel: HomeViewModel
+    @EnvironmentObject var viewModel: HomeViewModel
     
     var body: some View {
         NavigationView {
-            TabView {
-                NftListView(nfts: homeViewModel.nfts)
-                NftListView(nfts: homeViewModel.nfts)
+            ScrollView {
+                WalletCardView(isClickEditButton: $viewModel.isShowEditView)
+                    .sheet(isPresented: $viewModel.isShowEditView, content: {
+                        EditWalletView()
+                            .environmentObject(EditWalletViewModel())
+                    })
+                
+                NftListView(nfts: viewModel.nfts, isClickDetailButton: $viewModel.isShowDetailView)
+                
+                NavigationLink(destination: DetailView(), isActive: $viewModel.isShowDetailView) {
+                }.hidden()
+                
             }
             .tabViewStyle(.page(indexDisplayMode: .always))
             .navigationTitle("홈")
