@@ -26,6 +26,7 @@
 		7048804B28B61539001CD366 /* Encodable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048804A28B61539001CD366 /* Encodable+Ext.swift */; };
 		7048805028B61800001CD366 /* NftAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048804F28B61800001CD366 /* NftAPI.swift */; };
 		7083405328D23C58004609D3 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7083405228D23C58004609D3 /* UserSettings.swift */; };
+		70CF434028E313C000B3449C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CF433F28E313C000B3449C /* DetailView.swift */; };
 		70D0229F28B6195D0089E7E4 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D0229E28B6195D0089E7E4 /* NetworkAPI.swift */; };
 		70D022A228B6265C0089E7E4 /* RepositoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D022A128B6265C0089E7E4 /* RepositoryProvider.swift */; };
 		70E1127528D0CD8E0075586D /* CreateWalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1127428D0CD8E0075586D /* CreateWalletView.swift */; };
@@ -85,6 +86,7 @@
 		7048804A28B61539001CD366 /* Encodable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Ext.swift"; sourceTree = "<group>"; };
 		7048804F28B61800001CD366 /* NftAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftAPI.swift; sourceTree = "<group>"; };
 		7083405228D23C58004609D3 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		70CF433F28E313C000B3449C /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		70D0229E28B6195D0089E7E4 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		70D022A128B6265C0089E7E4 /* RepositoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryProvider.swift; sourceTree = "<group>"; };
 		70E1127428D0CD8E0075586D /* CreateWalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletView.swift; sourceTree = "<group>"; };
@@ -269,6 +271,14 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		70CF433E28E313A800B3449C /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				70CF433F28E313C000B3449C /* DetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		70D022A028B620060089E7E4 /* Nft */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,6 +400,7 @@
 				70E1127628D0CDAA0075586D /* Base */,
 				70E1127228D0CD5D0075586D /* Setting */,
 				703B199228E1492300E3753E /* EditWallet */,
+				70CF433E28E313A800B3449C /* Detail */,
 				7017EDB228B5EE790031959E /* Home */,
 			);
 			path = Presenter;
@@ -652,6 +663,7 @@
 				7048803F28B60077001CD366 /* Enviroment.swift in Sources */,
 				70D022A228B6265C0089E7E4 /* RepositoryProvider.swift in Sources */,
 				703B199128E1463900E3753E /* ChainType.swift in Sources */,
+				70CF434028E313C000B3449C /* DetailView.swift in Sources */,
 				703B198A28E1410800E3753E /* WalletCardView.swift in Sources */,
 				7048802F28B5FE06001CD366 /* NftRepository.swift in Sources */,
 				7048802928B5F71C001CD366 /* Nft.swift in Sources */,

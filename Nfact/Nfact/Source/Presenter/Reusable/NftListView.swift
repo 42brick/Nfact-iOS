@@ -8,49 +8,51 @@
 import SwiftUI
 
 struct NftListItemView: View {
-    let nft: Nft
+    @Binding var isClickDetailButton: Bool
     
     var body: some View {
         HStack {
-            Text("0")
-                .font(.subheadline)
-                .foregroundColor(.white)
-                .padding()
-                .background(
-                    Circle()
-                        .foregroundColor(.blue)
-                        .padding(6)
-                )
-            VStack {
-                Text("\(nft.name)")
-                    .font(.title3)
-                    .foregroundColor(.black)
-                
-                Text("\(nft.symbol)")
+            Image(systemName: "paperplane.circle.fill")
+                .resizable()
+                .frame(width: 35, height: 35)
+                .padding(.trailing, 2)
+            
+            VStack(alignment: .leading) {
+                Text("name")
                     .font(.body)
                     .foregroundColor(.black)
+                
+                Text("symbol")
+                    .font(.caption)
+                    .foregroundColor(.gray)
             }
             
             Spacer()
             
-            Button {
-                
+            Button() {
+                isClickDetailButton = true
             } label: {
-                Image(systemName: "chevron.right")
+                Text("상세보기")
             }
+            .buttonStyle(.bordered)
+            .tint(.blue)
         }
     }
 }
 
 struct NftListView: View {
     let nfts: [Nft]
-
+    @Binding var isClickDetailButton: Bool
+    
+    @State var dummy = ["Hohyeon", "Moon", "Jigom"]
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             LazyVStack {
-                ForEach(nfts, id: \.self) { nft in
-                    NftListItemView(nft: nft)
+                ForEach(dummy, id: \.self) { nft in
+                    NftListItemView(isClickDetailButton: $isClickDetailButton)
                         .padding(.horizontal, 20)
+                        .padding(.top, 10)
                 }
             }
         }

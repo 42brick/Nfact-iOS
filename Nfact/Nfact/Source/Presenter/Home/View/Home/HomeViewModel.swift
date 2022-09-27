@@ -14,6 +14,7 @@ class HomeViewModel: ObservableObject {
     
     @Published var nfts: [Nft] = []
     @Published var isShowEditView: Bool = false
+    @Published var isShowDetailView: Bool = false
     
     init() {
         bind()

@@ -12,11 +12,12 @@ struct EditWalletView: View {
     
     var body: some View {
         VStack {
-            TextField("Enter your name", text: $viewModel.name)
+            TextField("지갑의 이름", text: $viewModel.name)
             
-            TextField("Enter your name", text: $viewModel.adress)
+            TextField("주소", text: $viewModel.adress)
             
-            TextField("Enter your name", text: $viewModel.chain)
+            TextField("", text: $viewModel.chain)
         }
+        .padding()
     }
 }

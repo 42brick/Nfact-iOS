@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var viewModel: HomeViewModel
-
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -19,13 +19,15 @@ struct HomeView: View {
                             .environmentObject(EditWalletViewModel())
                     })
                 
-                NftListView(nfts: viewModel.nfts)
+                NftListView(nfts: viewModel.nfts, isClickDetailButton: $viewModel.isShowDetailView)
+                
+                NavigationLink(destination: DetailView(), isActive: $viewModel.isShowDetailView) {
+                }.hidden()
+                
             }
             .tabViewStyle(.page(indexDisplayMode: .always))
             .navigationTitle("홈")
             .navigationBarTitleDisplayMode(.large)
         }
     }
-    
-    
 }
