@@ -9,13 +9,14 @@ import Combine
 import SwiftUI
 
 struct WalletCardView: View {
+    @Binding var wallet: Wallet
     @Binding var isClickEditButton: Bool
     
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
                 HStack(alignment: .center) {
-                    Text("나만의 지갑")
+                    Text(wallet.name)
                         .foregroundColor(.white)
                         .bold()
                         .font(.title2)
@@ -38,7 +39,7 @@ struct WalletCardView: View {
                         .imageScale(.small)
                         .foregroundColor(.white)
                     
-                    Text("0xCB76200a088672E18E57A4381264aa82eAE14875")
+                    Text(wallet.address)
                         .foregroundColor(.white)
                         .font(.subheadline)
                         .lineLimit(1)
@@ -58,7 +59,7 @@ struct WalletCardView: View {
                         .imageScale(.small)
                         .foregroundColor(.white)
                     
-                    Text("eth")
+                    Text(String(describing: wallet.chain))
                         .foregroundColor(.white)
                         .font(.subheadline)
                         .lineLimit(1)

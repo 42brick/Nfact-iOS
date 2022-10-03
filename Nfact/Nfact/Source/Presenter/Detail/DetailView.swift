@@ -55,7 +55,6 @@ struct DetailView: View {
                         .buttonStyle(.bordered)
                         .tint(.green)
                     }
-//                    .frame(height: 100)
                     
                     Spacer()
                 }
@@ -86,16 +85,17 @@ struct DetailView: View {
                 Divider()
                     .padding(.vertical)
                 
-                VStack(alignment: .leading, spacing: 10) {
-                    Text("상세 정보")
-                        .font(.title3)
-                        .bold()
-                    
-                    Text("세부 내용입니다. 어쩌구 저쩌구")
-                        .font(.subheadline)
-                        .fontWeight(.medium)
-                        .foregroundColor(.gray)
-                }
+                //TODO: 버전 1.1 예정
+//                VStack(alignment: .leading, spacing: 10) {
+//                    Text("상세 정보")
+//                        .font(.title3)
+//                        .bold()
+//
+//                    Text("세부 내용입니다. 어쩌구 저쩌구")
+//                        .font(.subheadline)
+//                        .fontWeight(.medium)
+//                        .foregroundColor(.gray)
+//                }
                 
                 Spacer()
             }
