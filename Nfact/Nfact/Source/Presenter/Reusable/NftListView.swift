@@ -10,6 +10,7 @@ import SwiftUI
 struct NftListItemView: View {
     let nft: Nft
     @Binding var isClickDetailButton: Bool
+    @Binding var selectedNft: Nft?
     
     var body: some View {
         HStack {
@@ -44,6 +45,7 @@ struct NftListItemView: View {
             Spacer()
             
             Button() {
+                selectedNft = nft
                 isClickDetailButton = true
             } label: {
                 Text("상세보기")
@@ -57,12 +59,13 @@ struct NftListItemView: View {
 struct NftListView: View {
     let nfts: [Nft]
     @Binding var isClickDetailButton: Bool
+    @Binding var selectedNft: Nft?
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             LazyVStack {
                 ForEach(nfts, id: \.self) { nft in
-                    NftListItemView(nft: nft, isClickDetailButton: $isClickDetailButton)
+                    NftListItemView(nft: nft, isClickDetailButton: $isClickDetailButton, selectedNft: $selectedNft)
                         .padding(.horizontal, 20)
                         .padding(.top, 10)
                 }

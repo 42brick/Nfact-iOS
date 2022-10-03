@@ -19,9 +19,9 @@ struct HomeView: View {
                             .environmentObject(EditWalletViewModel())
                     })
                 
-                NftListView(nfts: viewModel.nfts, isClickDetailButton: $viewModel.isShowDetailView)
+                NftListView(nfts: viewModel.nfts, isClickDetailButton: $viewModel.isShowDetailView, selectedNft: $viewModel.selectedNft)
                 
-                NavigationLink(destination: DetailView(), isActive: $viewModel.isShowDetailView) {
+                NavigationLink(destination: DetailView(nft: $viewModel.selectedNft), isActive: $viewModel.isShowDetailView) {
                 }.hidden()
                 
             }
