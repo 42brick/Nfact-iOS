@@ -8,21 +8,35 @@
 import SwiftUI
 
 struct NftListItemView: View {
+    let nft: Nft
     @Binding var isClickDetailButton: Bool
     
     var body: some View {
         HStack {
-            Image(systemName: "paperplane.circle.fill")
-                .resizable()
-                .frame(width: 35, height: 35)
-                .padding(.trailing, 2)
+            AsyncImage(url: URL(string: nft.image ?? "")) { phase in
+                switch phase {
+                case .empty:
+                    ProgressView()
+                        .frame(width: 35, height: 35)
+                case .success(let image):
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: 35, maxHeight: 35)
+                case .failure:
+                    Image(systemName: "photo")
+                @unknown default:
+                    EmptyView()
+                }
+            }
+            .frame(width: 40)
             
             VStack(alignment: .leading) {
-                Text("name")
+                Text(nft.name)
                     .font(.body)
                     .foregroundColor(.black)
                 
-                Text("symbol")
+                Text(nft.symbol)
                     .font(.caption)
                     .foregroundColor(.gray)
             }
@@ -44,13 +58,11 @@ struct NftListView: View {
     let nfts: [Nft]
     @Binding var isClickDetailButton: Bool
     
-    @State var dummy = ["Hohyeon", "Moon", "Jigom"]
-    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             LazyVStack {
-                ForEach(dummy, id: \.self) { nft in
-                    NftListItemView(isClickDetailButton: $isClickDetailButton)
+                ForEach(nfts, id: \.self) { nft in
+                    NftListItemView(nft: nft, isClickDetailButton: $isClickDetailButton)
                         .padding(.horizontal, 20)
                         .padding(.top, 10)
                 }
