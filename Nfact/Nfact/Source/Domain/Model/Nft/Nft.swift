@@ -50,9 +50,10 @@ struct Nft: Codable, Hashable {
     let contractType: String?
     let name, symbol: String
     let tokenURI: String?
+    let image: String?
     let metadata: String?
     let lastTokenURISync: String?
-    let lastMetadataSync: String
+    let lastMetadataSync: String?
 
     enum CodingKeys: String, CodingKey {
         case id = "token_id"
@@ -65,7 +66,7 @@ struct Nft: Codable, Hashable {
         case contractType = "contract_type"
         case name, symbol
         case tokenURI = "token_uri"
-        case metadata
+        case image, metadata
         case lastTokenURISync = "last_token_uri_sync"
         case lastMetadataSync = "last_metadata_sync"
     }

@@ -48,16 +48,17 @@ struct DetailView: View {
                 Divider()
                     .padding(.vertical)
                 
-                ScrollView(.horizontal,showsIndicators: false) {
+                ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 15) {
                         ForEach(dummy,id: \.self) { user in
-                            InfoItemView()
+                            InfoItemView(type: .ownerOf, sub: "dddd")
                                 .frame(width: 60)
-                            
-                            Divider()
                         }
                     }
                 }
+                
+                Divider()
+                    .padding(.vertical)
                 
                 VStack(alignment: .leading, spacing: 10) {
                     Text("상세 정보")
@@ -69,12 +70,11 @@ struct DetailView: View {
                         .fontWeight(.medium)
                         .foregroundColor(.gray)
                 }
-                .padding(.vertical)
                 
                 Spacer()
             }
         }
-        .padding(.horizontal)
+        .padding()
         .navigationBarTitleDisplayMode(.inline)
     }
 }
