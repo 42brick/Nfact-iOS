@@ -19,23 +19,26 @@ class WalletService: WalletServicable {
     
     func createWallet(with wallet: Wallet) {
         try! realm.write {
-            realm.add(wallet)
+            realm.add(WalletRealm.parse(from: wallet))
+            print("[D] Wallet 생성")
         }
     }
     
     func readWallet(on id: Int) -> Wallet {
-        if let wallet = realm.object(ofType: Wallet.self, forPrimaryKey: id) {
-            return wallet
+        if let walletRealm = realm.object(ofType: WalletRealm.self, forPrimaryKey: id) {
+            print("[D] Wallet 읽어오기")
+            return Wallet.parse(from: walletRealm)
         } else {
             createWallet(with: Wallet(id: id, name: "", address: "", chain: .eth))
         }
         
-        return realm.object(ofType: Wallet.self, forPrimaryKey: id)!
+        return Wallet.parse(from: realm.object(ofType: WalletRealm.self, forPrimaryKey: id)!)
     }
     
     func updateWallet(with wallet: Wallet) {
         try! realm.write {
-            realm.add(wallet, update: .modified)
+            realm.add(WalletRealm.parse(from: wallet), update: .modified)
+            print("[D] Wallet 업데이트")
         }
     }
 }

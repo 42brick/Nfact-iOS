@@ -52,11 +52,15 @@ class EditWalletViewModel: ObservableObject {
         }
     }
     
+    private var service: ServiceProvidable = ServiceProvider.shared
+    
     init() {
         bind()
     }
     
     func bind() {
+        output.wallet = service.walletService.readWallet(on: 0)
+        
         didPutNameSubject
             .receive(on: RunLoop.main, options: .none)
             .sink(receiveValue: { [weak self] name in
@@ -67,7 +71,11 @@ class EditWalletViewModel: ObservableObject {
         didPutAddressSubject
             .receive(on: RunLoop.main, options: .none)
             .sink(receiveValue: { [weak self] address in
-                self?.output.wallet.address = address
+                if address.isEmpty {
+                    self?.output.wallet.address = ""
+                } else {
+                    self?.output.wallet.address = address
+                }
             })
             .store(in: &cancellables)
         
@@ -80,8 +88,11 @@ class EditWalletViewModel: ObservableObject {
         
         didTapSaveButtonSubject
             .receive(on: RunLoop.main, options: .none)
-            .sink(receiveValue: {
+            .sink(receiveValue: { [weak self] in
+                guard let this = self else { return }
                 
+                this.service.walletService.updateWallet(with: this.output.wallet)
             })
+            .store(in: &cancellables)
     }
 }

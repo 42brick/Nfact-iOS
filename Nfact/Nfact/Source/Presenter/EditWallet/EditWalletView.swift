@@ -69,7 +69,7 @@ struct EditWalletView: View {
                 Spacer()
                 
                 Button(action: {
-                    
+                    viewModel.apply(.didTapSaveButton)
                 }) {
                     Text("변경사항 저장하기")
                         .font(.title3)
