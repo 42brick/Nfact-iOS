@@ -8,26 +8,41 @@
 import SwiftUI
 
 struct DetailView: View {
-    let dummy = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    @Binding var nft: Nft?
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                HStack {
-                    Image(systemName: "paperplane.circle.fill")
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                        .padding(.trailing, 10)
+                HStack(alignment: .top, spacing: 10) {
+                    AsyncImage(url: URL(string: nft?.image ?? "")) { phase in
+                        switch phase {
+                        case .empty:
+                            ProgressView()
+                                .frame(width: 100, height: 100)
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: 100, maxHeight: 100)
+                        case .failure:
+                            Image(systemName: "photo")
+                        @unknown default:
+                            EmptyView()
+                        }
+                    }
+                    .frame(width: 100, height: 100)
                     
-                    VStack(alignment: .leading) {
-                        Text("name")
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text(nft?.name ?? "")
                             .font(.title2)
                             .bold()
                             .foregroundColor(.black)
+                            .fixedSize(horizontal: false, vertical: true)
                         
-                        Text("XXXXX")
+                        Text(nft?.tokenAddress ?? "")
                             .font(.caption)
                             .foregroundColor(.gray)
+                            .fixedSize(horizontal: false, vertical: true)
                         
                         Spacer()
                         
@@ -40,7 +55,6 @@ struct DetailView: View {
                         .buttonStyle(.bordered)
                         .tint(.green)
                     }
-                    .frame(height: 100)
                     
                     Spacer()
                 }
@@ -50,9 +64,20 @@ struct DetailView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 15) {
-                        ForEach(dummy,id: \.self) { user in
-                            InfoItemView(type: .ownerOf, sub: "dddd")
-                                .frame(width: 60)
+                        if let nft = nft {
+                            let width: CGFloat = 70
+                            
+                            InfoItemView(type: .ownerOf, sub: nft.ownerOf)
+                                .frame(width: width)
+                            
+                            InfoItemView(type: .tokenId, sub: nft.id)
+                                .frame(width: width)
+                            
+                            InfoItemView(type: .symbol, sub: nft.symbol)
+                                .frame(width: width)
+                            
+                            InfoItemView(type: .contractType, sub: nft.contractType ?? "")
+                                .frame(width: width)
                         }
                     }
                 }
@@ -60,16 +85,17 @@ struct DetailView: View {
                 Divider()
                     .padding(.vertical)
                 
-                VStack(alignment: .leading, spacing: 10) {
-                    Text("상세 정보")
-                        .font(.title3)
-                        .bold()
-                    
-                    Text("세부 내용입니다. 어쩌구 저쩌구")
-                        .font(.subheadline)
-                        .fontWeight(.medium)
-                        .foregroundColor(.gray)
-                }
+                //TODO: 버전 1.1 예정
+//                VStack(alignment: .leading, spacing: 10) {
+//                    Text("상세 정보")
+//                        .font(.title3)
+//                        .bold()
+//
+//                    Text("세부 내용입니다. 어쩌구 저쩌구")
+//                        .font(.subheadline)
+//                        .fontWeight(.medium)
+//                        .foregroundColor(.gray)
+//                }
                 
                 Spacer()
             }

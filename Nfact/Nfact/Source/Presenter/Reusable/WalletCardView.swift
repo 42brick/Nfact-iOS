@@ -9,13 +9,14 @@ import Combine
 import SwiftUI
 
 struct WalletCardView: View {
+    @Binding var wallet: Wallet
     @Binding var isClickEditButton: Bool
     
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
                 HStack(alignment: .center) {
-                    Text("나만의 지갑")
+                    Text(wallet.name)
                         .foregroundColor(.white)
                         .bold()
                         .font(.title2)
@@ -38,7 +39,7 @@ struct WalletCardView: View {
                         .imageScale(.small)
                         .foregroundColor(.white)
                     
-                    Text("0xCB76200a088672E18E57A4381264aa82eAE14875")
+                    Text(wallet.address)
                         .foregroundColor(.white)
                         .font(.subheadline)
                         .lineLimit(1)
@@ -54,30 +55,30 @@ struct WalletCardView: View {
                 .padding([.top, .leading, .trailing])
                 
                 HStack {
-                    Image(systemName: "tag")
+                    Image(systemName: "link")
                         .imageScale(.small)
                         .foregroundColor(.white)
                     
-                    Text("eth")
-                        .foregroundColor(.white)
-                        .font(.subheadline)
-                        .lineLimit(1)
-                }
-                .padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0))
-                .padding([.leading, .trailing])
-                
-                HStack {
-                    Image(systemName: "clock")
-                        .imageScale(.small)
-                        .foregroundColor(.white)
-                    
-                    Text("2022년 10월 24일 12시 57분 19초")
+                    Text(String(describing: wallet.symbol))
                         .foregroundColor(.white)
                         .font(.subheadline)
                         .lineLimit(1)
                 }
                 .padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0))
                 .padding([.leading, .trailing, .bottom])
+                
+//                HStack {
+//                    Image(systemName: "clock")
+//                        .imageScale(.small)
+//                        .foregroundColor(.white)
+//
+//                    Text("2022년 10월 24일 12시 57분 19초")
+//                        .foregroundColor(.white)
+//                        .font(.subheadline)
+//                        .lineLimit(1)
+//                }
+//                .padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0))
+//                .padding([.leading, .trailing, .bottom])
             }
             .background(.blue)
         }

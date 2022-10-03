@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct HomeView: View {
     @EnvironmentObject var viewModel: HomeViewModel
@@ -13,15 +14,15 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                WalletCardView(isClickEditButton: $viewModel.isShowEditView)
-                    .sheet(isPresented: $viewModel.isShowEditView, content: {
+                WalletCardView(wallet: $viewModel.output.wallet,isClickEditButton: $viewModel.isShowEditView)
+                    .sheet(isPresented: $viewModel.isShowEditView, onDismiss: {viewModel.apply(.refresh)}, content: {
                         EditWalletView()
                             .environmentObject(EditWalletViewModel())
                     })
                 
-                NftListView(nfts: viewModel.nfts, isClickDetailButton: $viewModel.isShowDetailView)
+                NftListView(nfts: $viewModel.output.nfts, isClickDetailButton: $viewModel.isShowDetailView, selectedNft: $viewModel.selectedNft)
                 
-                NavigationLink(destination: DetailView(), isActive: $viewModel.isShowDetailView) {
+                NavigationLink(destination: DetailView(nft: $viewModel.selectedNft), isActive: $viewModel.isShowDetailView) {
                 }.hidden()
                 
             }

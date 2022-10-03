@@ -9,59 +9,69 @@ import SwiftUI
 import Combine
 
 class HomeViewModel: ObservableObject {
-    private var repository: RepositoryProvider = RepositoryProvider.shared
+    let didChange = PassthroughSubject<Void, Never>()
     private var cancellables: [AnyCancellable] = []
     
-    @Published var nfts: [Nft] = []
     @Published var isShowEditView: Bool = false
     @Published var isShowDetailView: Bool = false
+    @Published var selectedNft: Nft?
+    
+    enum Input {
+        case refresh
+    }
+    
+    func apply(_ input: Input) {
+        switch input {
+        case .refresh:
+            refreshSubject.send(())
+        }
+    }
+    
+    private let refreshSubject = PassthroughSubject<Void, Never>()
+    
+    struct Output {
+        var wallet: Wallet = Wallet(id: 0, name: "", address: "", symbol: .eth)
+        var nfts: [Nft] = []
+    }
+    
+    @Published var output = Output() {
+        didSet {
+            didChange.send(())
+        }
+    }
+    
+    private var service: ServiceProvidable = ServiceProvider.shared
     
     init() {
         bind()
-//        bindOutputs()
         
-//        repository.nftRepository.getNftData(request: .init(addr: "0xCB76200a088672E18E57A4381264aa82eAE14875", symbol: .eth)).sink { (completion) in
-//            switch completion {
-//            case .failure(let error):
-//                print("oops got an error \(error.localizedDescription)")
-//            case .finished:
-//                print("nothing much to do here")
-//            }
-//        } receiveValue: { (response) in
-//            print("got my response here \(response.nftResult.result)")
-//        }
-//        .store(in: &cancellables)
+        refreshSubject.send(())
     }
     
     private func bind() {
-        repository.nftRepository.getNftData(request: .init(addr: UserSettings.shared.firstWalletAddress, symbol: .eth)).sink { (completion) in
-            switch completion {
-            case .failure(let error): print(error)
-            case .finished: break
-            }
-        } receiveValue: { (response) in
-            self.nfts = response.nftResult.result
-            print(self.nfts)
-        }
-        .store(in: &cancellables)
+        refreshSubject
+            .receive(on: RunLoop.main, options: .none)
+            .sink(receiveValue: { [weak self] in
+                guard let `self` = self else { return }
+                
+                self.fetchWallet()
+                self.fetchNfts()
+            })
+            .store(in: &cancellables)
     }
     
-    private func bindOutputs() {
-//        let isError = didTapIndexSubject
-//            .map { $0 == 4 }// map을 사용하여 기존 Int형을 Bool형으로 변환해줍니다..
-//                .share() // share을 사용해서 해당 Publisher를 공유해줍니다.
-//        
-//        let showError = isError.assign(to: \.output.isErrorShown, on: self) //isError Pulisher를 output.isErrorShown에 assign 해줍니다.
-//
-//        let showSucessedMessage = isError.filter { !$0 } // isError의 이벤트 값이 true일 경우 무시하기 위해서 filter를 걸어줍니다.
-//            .zip(didTapIndexSubject.eraseToAnyPublisher()) // didTapIndexSubject를 Publisher로 변환 한뒤 zip을 사용하여 isError와 합쳐줍니다.
-//            .map { "Sucessed \($1)" } // map을 사용하여 기존 값을 String형의 값으로 변환해줍니다.
-//            .assign(to: \.output.labelText, on: self) // 변환 된 값을 output.labelText에 assign 해줍니다.
-
-        // 해당 AnyCancellable 형의 프로퍼티들을 cancellables에 추가해줍니다.
-//        cancellables += [
-//            showSucessedMessage,
-//            showError
-//        ]
+    private func fetchWallet() {
+        output.wallet = service.walletService.readWallet(on: 0)
+    }
+    
+    private func fetchNfts() {
+        RepositoryProvider.shared.nftRepository.getNftData(request: .init(addr: output.wallet.address, symbol: output.wallet.symbol))
+            .receive(on: RunLoop.main, options: .none)
+            .sink(receiveCompletion: ({ _ in }),
+                  receiveValue: ({ [weak self] (response) in
+                guard let `self` = self else { return }
+                self.output.nfts = response.nftResult.result
+            }))
+            .store(in: &cancellables)
     }
 }
