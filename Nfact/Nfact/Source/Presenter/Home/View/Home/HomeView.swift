@@ -10,12 +10,11 @@ import Combine
 
 struct HomeView: View {
     @EnvironmentObject var viewModel: HomeViewModel
-    @State var wallet: Wallet = Wallet(id: 0, name: "", address: "", chain: .eth)
     
     var body: some View {
         NavigationView {
             ScrollView {
-                WalletCardView(wallet: $wallet,isClickEditButton: $viewModel.isShowEditView)
+                WalletCardView(wallet: $viewModel.wallet,isClickEditButton: $viewModel.isShowEditView)
                     .sheet(isPresented: $viewModel.isShowEditView, content: {
                         EditWalletView()
                             .environmentObject(EditWalletViewModel())

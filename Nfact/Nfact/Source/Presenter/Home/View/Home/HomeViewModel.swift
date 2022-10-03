@@ -12,29 +12,22 @@ class HomeViewModel: ObservableObject {
     private var repository: RepositoryProvider = RepositoryProvider.shared
     private var cancellables: [AnyCancellable] = []
     
+    @Published var wallet: Wallet = Wallet(id: 0, name: "", address: "", chain: .eth)
     @Published var nfts: [Nft] = []
     @Published var isShowEditView: Bool = false
     @Published var isShowDetailView: Bool = false
     @Published var selectedNft: Nft?
     
+    
+    private var service: ServiceProvidable = ServiceProvider.shared
+    
     init() {
         bind()
-        //        bindOutputs()
-        
-        //        repository.nftRepository.getNftData(request: .init(addr: "0xCB76200a088672E18E57A4381264aa82eAE14875", symbol: .eth)).sink { (completion) in
-        //            switch completion {
-        //            case .failure(let error):
-        //                print("oops got an error \(error.localizedDescription)")
-        //            case .finished:
-        //                print("nothing much to do here")
-        //            }
-        //        } receiveValue: { (response) in
-        //            print("got my response here \(response.nftResult.result)")
-        //        }
-        //        .store(in: &cancellables)
     }
     
     private func bind() {
+        wallet = service.walletService.readWallet(on: 0)
+        
         repository.nftRepository.getNftData(request: .init(addr: UserSettings.shared.firstWalletAddress, symbol: .eth))
             .receive(on: RunLoop.main, options: .none)
             .sink { (completion) in

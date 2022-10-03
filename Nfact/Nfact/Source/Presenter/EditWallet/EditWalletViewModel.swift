@@ -46,13 +46,11 @@ class EditWalletViewModel: ObservableObject {
         var wallet: Wallet = Wallet(id: 0, name: "", address: "", chain: .eth)
     }
     
-    var output = Output()
-    
-//    private(set) var output = Output() {
-//        didSet {
-//            didChange.send(())
-//        }
-//    }
+    var output = Output() {
+        didSet {
+            didChange.send(())
+        }
+    }
     
     init() {
         bind()
@@ -79,5 +77,11 @@ class EditWalletViewModel: ObservableObject {
                 self?.output.wallet.chain = type
             })
             .store(in: &cancellables)
+        
+        didTapSaveButtonSubject
+            .receive(on: RunLoop.main, options: .none)
+            .sink(receiveValue: {
+                
+            })
     }
 }

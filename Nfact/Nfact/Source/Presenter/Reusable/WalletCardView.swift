@@ -55,7 +55,7 @@ struct WalletCardView: View {
                 .padding([.top, .leading, .trailing])
                 
                 HStack {
-                    Image(systemName: "tag")
+                    Image(systemName: "link")
                         .imageScale(.small)
                         .foregroundColor(.white)
                     
@@ -65,20 +65,20 @@ struct WalletCardView: View {
                         .lineLimit(1)
                 }
                 .padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0))
-                .padding([.leading, .trailing])
-                
-                HStack {
-                    Image(systemName: "clock")
-                        .imageScale(.small)
-                        .foregroundColor(.white)
-                    
-                    Text("2022년 10월 24일 12시 57분 19초")
-                        .foregroundColor(.white)
-                        .font(.subheadline)
-                        .lineLimit(1)
-                }
-                .padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0))
                 .padding([.leading, .trailing, .bottom])
+                
+//                HStack {
+//                    Image(systemName: "clock")
+//                        .imageScale(.small)
+//                        .foregroundColor(.white)
+//
+//                    Text("2022년 10월 24일 12시 57분 19초")
+//                        .foregroundColor(.white)
+//                        .font(.subheadline)
+//                        .lineLimit(1)
+//                }
+//                .padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0))
+//                .padding([.leading, .trailing, .bottom])
             }
             .background(.blue)
         }

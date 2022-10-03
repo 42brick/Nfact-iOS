@@ -50,7 +50,7 @@ struct EditWalletView: View {
                 HStack {
                     ForEach(ChainType.allCases, id: \.self) { (type) in
                         Button(action: {
-                            
+                            viewModel.apply(.didTapChain(type: type))
                         }) {
                             Text(String(describing: type))
                                 .font(.footnote)
