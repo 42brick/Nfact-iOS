@@ -12,10 +12,10 @@ struct Wallet {
     var id: Int
     var name: String = ""
     var address: String = ""
-    var chain: ChainType = .bsc
+    var symbol: SymbolType = .bsc
     
     static func parse(from realm: WalletRealm) -> Self {
-        return Wallet(id: realm.id, name: realm.name, address: realm.address, chain: realm.chain)
+        return Wallet(id: realm.id, name: realm.name, address: realm.address, symbol: realm.symbol)
     }
 }
 
@@ -23,18 +23,18 @@ class WalletRealm: Object {
     @Persisted(primaryKey: true) var id: Int
     @Persisted var name: String = ""
     @Persisted var address: String = ""
-    @Persisted var chain: ChainType = .bsc
+    @Persisted var symbol: SymbolType = .bsc
     
-    convenience init(id: Int, name: String, address: String, chain: ChainType) {
+    convenience init(id: Int, name: String, address: String, symbol: SymbolType) {
         self.init()
         
         self.id = id
         self.name = name
         self.address = address
-        self.chain = chain
+        self.symbol = symbol
     }
     
     static func parse(from origin: Wallet) -> WalletRealm {
-        return WalletRealm(id: origin.id, name: origin.name, address: origin.address, chain: origin.chain)
+        return WalletRealm(id: origin.id, name: origin.name, address: origin.address, symbol: origin.symbol)
     }
 }

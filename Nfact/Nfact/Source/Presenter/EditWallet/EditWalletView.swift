@@ -48,7 +48,7 @@ struct EditWalletView: View {
                     .frame(maxWidth: 15, maxHeight: 15)
                 
                 HStack {
-                    ForEach(ChainType.allCases, id: \.self) { (type) in
+                    ForEach(SymbolType.allCases, id: \.self) { (type) in
                         Button(action: {
                             viewModel.apply(.didTapChain(type: type))
                         }) {

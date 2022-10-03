@@ -57,7 +57,7 @@ struct NftListItemView: View {
 }
 
 struct NftListView: View {
-    let nfts: [Nft]
+    @Binding var nfts: [Nft]
     @Binding var isClickDetailButton: Bool
     @Binding var selectedNft: Nft?
     
@@ -68,6 +68,9 @@ struct NftListView: View {
                     NftListItemView(nft: nft, isClickDetailButton: $isClickDetailButton, selectedNft: $selectedNft)
                         .padding(.horizontal, 20)
                         .padding(.top, 10)
+                }
+                .refreshable {
+                    nfts = nfts
                 }
             }
         }

@@ -59,7 +59,7 @@ struct WalletCardView: View {
                         .imageScale(.small)
                         .foregroundColor(.white)
                     
-                    Text(String(describing: wallet.chain))
+                    Text(String(describing: wallet.symbol))
                         .foregroundColor(.white)
                         .font(.subheadline)
                         .lineLimit(1)

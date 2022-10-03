@@ -14,13 +14,13 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                WalletCardView(wallet: $viewModel.wallet,isClickEditButton: $viewModel.isShowEditView)
-                    .sheet(isPresented: $viewModel.isShowEditView, content: {
+                WalletCardView(wallet: $viewModel.output.wallet,isClickEditButton: $viewModel.isShowEditView)
+                    .sheet(isPresented: $viewModel.isShowEditView, onDismiss: {viewModel.apply(.refresh)}, content: {
                         EditWalletView()
                             .environmentObject(EditWalletViewModel())
                     })
                 
-                NftListView(nfts: viewModel.nfts, isClickDetailButton: $viewModel.isShowDetailView, selectedNft: $viewModel.selectedNft)
+                NftListView(nfts: $viewModel.output.nfts, isClickDetailButton: $viewModel.isShowDetailView, selectedNft: $viewModel.selectedNft)
                 
                 NavigationLink(destination: DetailView(nft: $viewModel.selectedNft), isActive: $viewModel.isShowDetailView) {
                 }.hidden()

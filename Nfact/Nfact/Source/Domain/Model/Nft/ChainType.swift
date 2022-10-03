@@ -8,9 +8,7 @@
 import Foundation
 import RealmSwift
 
-enum ChainType: String, Codable, PersistableEnum {
-    static var list: [ChainType] = [.eth, .bsc, .matic, .ftm]
-    
+enum ChainType: String, Codable {
     case eth = "Ethereum"
     case bsc = "Binance Smart Chain"
     case matic = "Polygon"

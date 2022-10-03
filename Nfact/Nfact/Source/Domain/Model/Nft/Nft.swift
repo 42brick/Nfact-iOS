@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import RealmSwift
 
-enum SymbolType: String, Codable {
+enum SymbolType: String, Codable, PersistableEnum {
     case eth = "eth"
     case bsc = "bsc"
     case matic = "matic"

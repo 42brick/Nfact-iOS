@@ -29,7 +29,7 @@ class WalletService: WalletServicable {
             print("[D] Wallet 읽어오기")
             return Wallet.parse(from: walletRealm)
         } else {
-            createWallet(with: Wallet(id: id, name: "", address: "", chain: .eth))
+            createWallet(with: Wallet(id: id, name: "", address: "", symbol: .eth))
         }
         
         return Wallet.parse(from: realm.object(ofType: WalletRealm.self, forPrimaryKey: id)!)

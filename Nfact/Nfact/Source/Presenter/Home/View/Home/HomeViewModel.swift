@@ -9,40 +9,69 @@ import SwiftUI
 import Combine
 
 class HomeViewModel: ObservableObject {
-    private var repository: RepositoryProvider = RepositoryProvider.shared
+    let didChange = PassthroughSubject<Void, Never>()
     private var cancellables: [AnyCancellable] = []
     
-    @Published var wallet: Wallet = Wallet(id: 0, name: "", address: "", chain: .eth)
-    @Published var nfts: [Nft] = []
     @Published var isShowEditView: Bool = false
     @Published var isShowDetailView: Bool = false
     @Published var selectedNft: Nft?
     
+    enum Input {
+        case refresh
+    }
+    
+    func apply(_ input: Input) {
+        switch input {
+        case .refresh:
+            refreshSubject.send(())
+        }
+    }
+    
+    private let refreshSubject = PassthroughSubject<Void, Never>()
+    
+    struct Output {
+        var wallet: Wallet = Wallet(id: 0, name: "", address: "", symbol: .eth)
+        var nfts: [Nft] = []
+    }
+    
+    @Published var output = Output() {
+        didSet {
+            didChange.send(())
+        }
+    }
     
     private var service: ServiceProvidable = ServiceProvider.shared
     
     init() {
         bind()
+        
+        refreshSubject.send(())
     }
     
     private func bind() {
-        wallet = service.walletService.readWallet(on: 0)
-        
-        repository.nftRepository.getNftData(request: .init(addr: UserSettings.shared.firstWalletAddress, symbol: .eth))
+        refreshSubject
             .receive(on: RunLoop.main, options: .none)
-            .sink { (completion) in
-                switch completion {
-                case .failure(let error): print(error)
-                case .finished: break
-                }
-            } receiveValue: { (response) in
-                self.nfts = response.nftResult.result
-                print(self.nfts)
-            }
+            .sink(receiveValue: { [weak self] in
+                guard let `self` = self else { return }
+                
+                self.fetchWallet()
+                self.fetchNfts()
+            })
             .store(in: &cancellables)
     }
     
-    private func bindOutputs() {
-        
+    private func fetchWallet() {
+        output.wallet = service.walletService.readWallet(on: 0)
+    }
+    
+    private func fetchNfts() {
+        RepositoryProvider.shared.nftRepository.getNftData(request: .init(addr: output.wallet.address, symbol: output.wallet.symbol))
+            .receive(on: RunLoop.main, options: .none)
+            .sink(receiveCompletion: ({ _ in }),
+                  receiveValue: ({ [weak self] (response) in
+                guard let `self` = self else { return }
+                self.output.nfts = response.nftResult.result
+            }))
+            .store(in: &cancellables)
     }
 }
