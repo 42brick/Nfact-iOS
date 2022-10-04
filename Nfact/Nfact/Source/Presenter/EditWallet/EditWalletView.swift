@@ -10,6 +10,7 @@ import Combine
 
 struct EditWalletView: View {
     @EnvironmentObject var viewModel: EditWalletViewModel
+    @Binding var isDismiss: Bool
     @State var tmp: Bool = false
     
     var body: some View {
@@ -70,6 +71,7 @@ struct EditWalletView: View {
                 
                 Button(action: {
                     viewModel.apply(.didTapSaveButton)
+                    isDismiss = false
                 }) {
                     Text("변경사항 저장하기")
                         .font(.title3)

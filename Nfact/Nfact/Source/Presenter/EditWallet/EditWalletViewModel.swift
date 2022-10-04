@@ -46,7 +46,7 @@ class EditWalletViewModel: ObservableObject {
         var wallet: Wallet = Wallet(id: 0, name: "", address: "", symbol: .eth)
     }
     
-    var output = Output() {
+    @Published var output = Output() {
         didSet {
             didChange.send(())
         }
