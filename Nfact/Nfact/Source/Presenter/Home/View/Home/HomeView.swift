@@ -16,7 +16,7 @@ struct HomeView: View {
             ScrollView {
                 WalletCardView(wallet: $viewModel.output.wallet,isClickEditButton: $viewModel.isShowEditView)
                     .sheet(isPresented: $viewModel.isShowEditView, onDismiss: {viewModel.apply(.refresh)}, content: {
-                        EditWalletView()
+                        EditWalletView(isDismiss: $viewModel.isShowEditView)
                             .environmentObject(EditWalletViewModel())
                     })
                 
