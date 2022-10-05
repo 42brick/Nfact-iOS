@@ -9,13 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TabView {
-            Text("hoony's home")
-                .tabItem{
-                    Image(systemName: "house")
-                    Text("홈")
-            }
-        }
+        HomeView()
+              .environmentObject(HomeViewModel())
+        .font(.headline)
+        .accentColor(.black)
     }
 }
 

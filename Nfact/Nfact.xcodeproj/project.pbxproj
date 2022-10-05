@@ -7,6 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		703B198A28E1410800E3753E /* WalletCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703B198928E1410800E3753E /* WalletCardView.swift */; };
+		703B198F28E144AF00E3753E /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703B198E28E144AF00E3753E /* Wallet.swift */; };
+		703B199128E1463900E3753E /* ChainType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703B199028E1463900E3753E /* ChainType.swift */; };
+		703B199428E1493800E3753E /* EditWalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703B199328E1493800E3753E /* EditWalletView.swift */; };
+		703B199628E1629D00E3753E /* EditWalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703B199528E1629D00E3753E /* EditWalletViewModel.swift */; };
+		7048802328B5F2A6001CD366 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048802228B5F2A5001CD366 /* HomeViewModel.swift */; };
+		7048802928B5F71C001CD366 /* Nft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048802828B5F71C001CD366 /* Nft.swift */; };
+		7048802D28B5F8DA001CD366 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048802C28B5F8DA001CD366 /* BaseViewModel.swift */; };
+		7048802F28B5FE06001CD366 /* NftRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048802E28B5FE06001CD366 /* NftRepository.swift */; };
+		7048803128B5FE8C001CD366 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048803028B5FE8C001CD366 /* Requestable.swift */; };
+		7048803B28B5FFD6001CD366 /* debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 7048803A28B5FFD6001CD366 /* debug.xcconfig */; };
+		7048803D28B60012001CD366 /* release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 7048803C28B60012001CD366 /* release.xcconfig */; };
+		7048803F28B60077001CD366 /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048803E28B60077001CD366 /* Enviroment.swift */; };
+		7048804228B60999001CD366 /* NftRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048804128B60999001CD366 /* NftRequest.swift */; };
+		7048804628B613F5001CD366 /* HTTPHeaderField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048804528B613F5001CD366 /* HTTPHeaderField.swift */; };
+		7048804828B61416001CD366 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048804728B61416001CD366 /* ContentType.swift */; };
+		7048804B28B61539001CD366 /* Encodable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048804A28B61539001CD366 /* Encodable+Ext.swift */; };
+		7048805028B61800001CD366 /* NftAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048804F28B61800001CD366 /* NftAPI.swift */; };
+		7054820328E4559600AC7CA0 /* InfoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7054820228E4559600AC7CA0 /* InfoItemView.swift */; };
+		7083405328D23C58004609D3 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7083405228D23C58004609D3 /* UserSettings.swift */; };
+		70CF434028E313C000B3449C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CF433F28E313C000B3449C /* DetailView.swift */; };
+		70D0229F28B6195D0089E7E4 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D0229E28B6195D0089E7E4 /* NetworkAPI.swift */; };
+		70D022A228B6265C0089E7E4 /* RepositoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D022A128B6265C0089E7E4 /* RepositoryProvider.swift */; };
+		70DE347528EB0AAC0099E040 /* WalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DE347428EB0AAC0099E040 /* WalletService.swift */; };
+		70DE347828EB0E650099E040 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DE347728EB0E650099E040 /* ServiceProvider.swift */; };
+		70E1127528D0CD8E0075586D /* CreateWalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1127428D0CD8E0075586D /* CreateWalletView.swift */; };
+		70E1127828D0D1810075586D /* CreateWalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1127728D0D1810075586D /* CreateWalletViewModel.swift */; };
 		70E5701828ACBF8C00D32BDA /* NfactApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E5701728ACBF8C00D32BDA /* NfactApp.swift */; };
 		70E5701A28ACBF8C00D32BDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E5701928ACBF8C00D32BDA /* ContentView.swift */; };
 		70E5701C28ACBF8D00D32BDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70E5701B28ACBF8D00D32BDA /* Assets.xcassets */; };
@@ -14,6 +41,11 @@
 		70E5702928ACBF8D00D32BDA /* NfactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E5702828ACBF8D00D32BDA /* NfactTests.swift */; };
 		70E5703328ACBF8E00D32BDA /* NfactUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E5703228ACBF8E00D32BDA /* NfactUITests.swift */; };
 		70E5703528ACBF8E00D32BDA /* NfactUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E5703428ACBF8E00D32BDA /* NfactUITestsLaunchTests.swift */; };
+		70E5704328ACC45100D32BDA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E5704228ACC45100D32BDA /* HomeView.swift */; };
+		70E5704528ACC9D300D32BDA /* NftListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E5704428ACC9D300D32BDA /* NftListView.swift */; };
+		79CF3EE3FCA33F6CEF539A70 /* Pods_NfactTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92BD136FD516E694F5B4B361 /* Pods_NfactTests.framework */; };
+		9392666B5D551BE10D19C1BD /* Pods_Nfact.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E3EC55F4E3E71EC93366F3 /* Pods_Nfact.framework */; };
+		B378C2ADF076B6CA79FA6F0D /* Pods_Nfact_NfactUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE2F8C536C95F22024E29BB /* Pods_Nfact_NfactUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +66,37 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09C37FB2FAEDCA460E1AC555 /* Pods-NfactTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NfactTests.release.xcconfig"; path = "Target Support Files/Pods-NfactTests/Pods-NfactTests.release.xcconfig"; sourceTree = "<group>"; };
+		50E3EC55F4E3E71EC93366F3 /* Pods_Nfact.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nfact.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		652F763C54F4FC82213B3322 /* Pods-NfactTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NfactTests.debug.xcconfig"; path = "Target Support Files/Pods-NfactTests/Pods-NfactTests.debug.xcconfig"; sourceTree = "<group>"; };
+		703B198928E1410800E3753E /* WalletCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardView.swift; sourceTree = "<group>"; };
+		703B198E28E144AF00E3753E /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		703B199028E1463900E3753E /* ChainType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainType.swift; sourceTree = "<group>"; };
+		703B199328E1493800E3753E /* EditWalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWalletView.swift; sourceTree = "<group>"; };
+		703B199528E1629D00E3753E /* EditWalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWalletViewModel.swift; sourceTree = "<group>"; };
+		7048802228B5F2A5001CD366 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		7048802828B5F71C001CD366 /* Nft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nft.swift; sourceTree = "<group>"; };
+		7048802C28B5F8DA001CD366 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		7048802E28B5FE06001CD366 /* NftRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftRepository.swift; sourceTree = "<group>"; };
+		7048803028B5FE8C001CD366 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		7048803A28B5FFD6001CD366 /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
+		7048803C28B60012001CD366 /* release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = release.xcconfig; sourceTree = "<group>"; };
+		7048803E28B60077001CD366 /* Enviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
+		7048804028B603D0001CD366 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7048804128B60999001CD366 /* NftRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftRequest.swift; sourceTree = "<group>"; };
+		7048804528B613F5001CD366 /* HTTPHeaderField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeaderField.swift; sourceTree = "<group>"; };
+		7048804728B61416001CD366 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
+		7048804A28B61539001CD366 /* Encodable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Ext.swift"; sourceTree = "<group>"; };
+		7048804F28B61800001CD366 /* NftAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftAPI.swift; sourceTree = "<group>"; };
+		7054820228E4559600AC7CA0 /* InfoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoItemView.swift; sourceTree = "<group>"; };
+		7083405228D23C58004609D3 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		70CF433F28E313C000B3449C /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		70D0229E28B6195D0089E7E4 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
+		70D022A128B6265C0089E7E4 /* RepositoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryProvider.swift; sourceTree = "<group>"; };
+		70DE347428EB0AAC0099E040 /* WalletService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletService.swift; sourceTree = "<group>"; };
+		70DE347728EB0E650099E040 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		70E1127428D0CD8E0075586D /* CreateWalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletView.swift; sourceTree = "<group>"; };
+		70E1127728D0D1810075586D /* CreateWalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletViewModel.swift; sourceTree = "<group>"; };
 		70E5701428ACBF8C00D32BDA /* Nfact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nfact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70E5701728ACBF8C00D32BDA /* NfactApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfactApp.swift; sourceTree = "<group>"; };
 		70E5701928ACBF8C00D32BDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +107,14 @@
 		70E5702E28ACBF8E00D32BDA /* NfactUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NfactUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70E5703228ACBF8E00D32BDA /* NfactUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfactUITests.swift; sourceTree = "<group>"; };
 		70E5703428ACBF8E00D32BDA /* NfactUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfactUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		70E5704228ACC45100D32BDA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		70E5704428ACC9D300D32BDA /* NftListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftListView.swift; sourceTree = "<group>"; };
+		74326022C693C4684DA22644 /* Pods-Nfact.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nfact.debug.xcconfig"; path = "Target Support Files/Pods-Nfact/Pods-Nfact.debug.xcconfig"; sourceTree = "<group>"; };
+		8FE2F8C536C95F22024E29BB /* Pods_Nfact_NfactUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nfact_NfactUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92BD136FD516E694F5B4B361 /* Pods_NfactTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NfactTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBB3F88FE75B17930005CEE3 /* Pods-Nfact-NfactUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nfact-NfactUITests.debug.xcconfig"; path = "Target Support Files/Pods-Nfact-NfactUITests/Pods-Nfact-NfactUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DA6264CC38008FD78D2AF21E /* Pods-Nfact.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nfact.release.xcconfig"; path = "Target Support Files/Pods-Nfact/Pods-Nfact.release.xcconfig"; sourceTree = "<group>"; };
+		DEC4AED4DCE128CFABF79C52 /* Pods-Nfact-NfactUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nfact-NfactUITests.release.xcconfig"; path = "Target Support Files/Pods-Nfact-NfactUITests/Pods-Nfact-NfactUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9392666B5D551BE10D19C1BD /* Pods_Nfact.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79CF3EE3FCA33F6CEF539A70 /* Pods_NfactTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,12 +138,225 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B378C2ADF076B6CA79FA6F0D /* Pods_Nfact_NfactUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AB43C906A5C3D1AA0E4D0BB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74326022C693C4684DA22644 /* Pods-Nfact.debug.xcconfig */,
+				DA6264CC38008FD78D2AF21E /* Pods-Nfact.release.xcconfig */,
+				BBB3F88FE75B17930005CEE3 /* Pods-Nfact-NfactUITests.debug.xcconfig */,
+				DEC4AED4DCE128CFABF79C52 /* Pods-Nfact-NfactUITests.release.xcconfig */,
+				652F763C54F4FC82213B3322 /* Pods-NfactTests.debug.xcconfig */,
+				09C37FB2FAEDCA460E1AC555 /* Pods-NfactTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7017EDAB28B5EDF20031959E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				7017EDAD28B5EDFF0031959E /* Model */,
+				7017EDAC28B5EDFB0031959E /* Network */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		7017EDAC28B5EDFB0031959E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				70DE347328EB0A900099E040 /* Service */,
+				70D022A328B633410089E7E4 /* Repository */,
+				7048803228B5FED5001CD366 /* Base */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7017EDAD28B5EDFF0031959E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				703B198B28E1433100E3753E /* Wallet */,
+				70D022A028B620060089E7E4 /* Nft */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7017EDB228B5EE790031959E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7048802228B5F2A5001CD366 /* HomeViewModel.swift */,
+				70E5704228ACC45100D32BDA /* HomeView.swift */,
+			);
+			name = Home;
+			path = Home/View/Home;
+			sourceTree = "<group>";
+		};
+		7017EDB328B5EE7F0031959E /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				70E5704428ACC9D300D32BDA /* NftListView.swift */,
+				703B198928E1410800E3753E /* WalletCardView.swift */,
+				7054820228E4559600AC7CA0 /* InfoItemView.swift */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
+		703B198B28E1433100E3753E /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				703B198E28E144AF00E3753E /* Wallet.swift */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		703B199228E1492300E3753E /* EditWallet */ = {
+			isa = PBXGroup;
+			children = (
+				703B199328E1493800E3753E /* EditWalletView.swift */,
+				703B199528E1629D00E3753E /* EditWalletViewModel.swift */,
+			);
+			path = EditWallet;
+			sourceTree = "<group>";
+		};
+		7048803228B5FED5001CD366 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7048803028B5FE8C001CD366 /* Requestable.swift */,
+				7048804528B613F5001CD366 /* HTTPHeaderField.swift */,
+				7048804728B61416001CD366 /* ContentType.swift */,
+				70D0229E28B6195D0089E7E4 /* NetworkAPI.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		7048803628B5FF94001CD366 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7083405128D23C50004609D3 /* Config */,
+				7048804928B6152A001CD366 /* Extension */,
+				7017EDAB28B5EDF20031959E /* Domain */,
+				70E5704128ACC33C00D32BDA /* Presenter */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		7048803728B5FF9C001CD366 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				7048803828B5FFA2001CD366 /* Config */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		7048803828B5FFA2001CD366 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				7048803A28B5FFD6001CD366 /* debug.xcconfig */,
+				7048803C28B60012001CD366 /* release.xcconfig */,
+				7048803E28B60077001CD366 /* Enviroment.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		7048804928B6152A001CD366 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7048804A28B61539001CD366 /* Encodable+Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		7083405128D23C50004609D3 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				7083405228D23C58004609D3 /* UserSettings.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		70CF433E28E313A800B3449C /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				70CF433F28E313C000B3449C /* DetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		70D022A028B620060089E7E4 /* Nft */ = {
+			isa = PBXGroup;
+			children = (
+				7048802828B5F71C001CD366 /* Nft.swift */,
+				7048804128B60999001CD366 /* NftRequest.swift */,
+				703B199028E1463900E3753E /* ChainType.swift */,
+			);
+			path = Nft;
+			sourceTree = "<group>";
+		};
+		70D022A328B633410089E7E4 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				70D022A128B6265C0089E7E4 /* RepositoryProvider.swift */,
+				70D022A428B633500089E7E4 /* Nft */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		70D022A428B633500089E7E4 /* Nft */ = {
+			isa = PBXGroup;
+			children = (
+				7048802E28B5FE06001CD366 /* NftRepository.swift */,
+				7048804F28B61800001CD366 /* NftAPI.swift */,
+			);
+			path = Nft;
+			sourceTree = "<group>";
+		};
+		70DE347328EB0A900099E040 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				70DE347628EB0E4D0099E040 /* Wallet */,
+				70DE347728EB0E650099E040 /* ServiceProvider.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		70DE347628EB0E4D0099E040 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				70DE347428EB0AAC0099E040 /* WalletService.swift */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		70E1127228D0CD5D0075586D /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				70E1127328D0CD680075586D /* CreateWallet */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		70E1127328D0CD680075586D /* CreateWallet */ = {
+			isa = PBXGroup;
+			children = (
+				70E1127428D0CD8E0075586D /* CreateWalletView.swift */,
+				70E1127728D0D1810075586D /* CreateWalletViewModel.swift */,
+			);
+			path = CreateWallet;
+			sourceTree = "<group>";
+		};
+		70E1127628D0CDAA0075586D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7048802C28B5F8DA001CD366 /* BaseViewModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		70E5700B28ACBF8C00D32BDA = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +364,8 @@
 				70E5702728ACBF8D00D32BDA /* NfactTests */,
 				70E5703128ACBF8E00D32BDA /* NfactUITests */,
 				70E5701528ACBF8C00D32BDA /* Products */,
+				3AB43C906A5C3D1AA0E4D0BB /* Pods */,
+				8A413766EF3200B8C871ADAF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +382,9 @@
 		70E5701628ACBF8C00D32BDA /* Nfact */ = {
 			isa = PBXGroup;
 			children = (
+				7048804028B603D0001CD366 /* Info.plist */,
+				7048803728B5FF9C001CD366 /* Resource */,
+				7048803628B5FF94001CD366 /* Source */,
 				70E5701728ACBF8C00D32BDA /* NfactApp.swift */,
 				70E5701928ACBF8C00D32BDA /* ContentView.swift */,
 				70E5701B28ACBF8D00D32BDA /* Assets.xcassets */,
@@ -127,6 +418,29 @@
 			path = NfactUITests;
 			sourceTree = "<group>";
 		};
+		70E5704128ACC33C00D32BDA /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7017EDB328B5EE7F0031959E /* Reusable */,
+				70E1127628D0CDAA0075586D /* Base */,
+				70E1127228D0CD5D0075586D /* Setting */,
+				703B199228E1492300E3753E /* EditWallet */,
+				70CF433E28E313A800B3449C /* Detail */,
+				7017EDB228B5EE790031959E /* Home */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8A413766EF3200B8C871ADAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50E3EC55F4E3E71EC93366F3 /* Pods_Nfact.framework */,
+				8FE2F8C536C95F22024E29BB /* Pods_Nfact_NfactUITests.framework */,
+				92BD136FD516E694F5B4B361 /* Pods_NfactTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +448,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70E5703828ACBF8E00D32BDA /* Build configuration list for PBXNativeTarget "Nfact" */;
 			buildPhases = (
+				228B2F30BAA2BD9BD6AF0CE8 /* [CP] Check Pods Manifest.lock */,
 				70E5701028ACBF8C00D32BDA /* Sources */,
 				70E5701128ACBF8C00D32BDA /* Frameworks */,
 				70E5701228ACBF8C00D32BDA /* Resources */,
+				A0631A06A30C385015F95749 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +467,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70E5703B28ACBF8E00D32BDA /* Build configuration list for PBXNativeTarget "NfactTests" */;
 			buildPhases = (
+				B457A9894B02C411E6823E00 /* [CP] Check Pods Manifest.lock */,
 				70E5702028ACBF8D00D32BDA /* Sources */,
 				70E5702128ACBF8D00D32BDA /* Frameworks */,
 				70E5702228ACBF8D00D32BDA /* Resources */,
@@ -169,9 +486,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70E5703E28ACBF8E00D32BDA /* Build configuration list for PBXNativeTarget "NfactUITests" */;
 			buildPhases = (
+				1B40E56F5D929B64195ABCA5 /* [CP] Check Pods Manifest.lock */,
 				70E5702A28ACBF8E00D32BDA /* Sources */,
 				70E5702B28ACBF8E00D32BDA /* Frameworks */,
 				70E5702C28ACBF8E00D32BDA /* Resources */,
+				684A9E484467A10192A6D548 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,7 +550,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7048803D28B60012001CD366 /* release.xcconfig in Resources */,
 				70E5701F28ACBF8D00D32BDA /* Preview Assets.xcassets in Resources */,
+				7048803B28B5FFD6001CD366 /* debug.xcconfig in Resources */,
 				70E5701C28ACBF8D00D32BDA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,13 +573,143 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B40E56F5D929B64195ABCA5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nfact-NfactUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		228B2F30BAA2BD9BD6AF0CE8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nfact-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		684A9E484467A10192A6D548 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nfact-NfactUITests/Pods-Nfact-NfactUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nfact-NfactUITests/Pods-Nfact-NfactUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Nfact-NfactUITests/Pods-Nfact-NfactUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0631A06A30C385015F95749 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nfact/Pods-Nfact-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nfact/Pods-Nfact-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Nfact/Pods-Nfact-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B457A9894B02C411E6823E00 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NfactTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		70E5701028ACBF8C00D32BDA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7048804628B613F5001CD366 /* HTTPHeaderField.swift in Sources */,
+				70E5704328ACC45100D32BDA /* HomeView.swift in Sources */,
+				703B199628E1629D00E3753E /* EditWalletViewModel.swift in Sources */,
 				70E5701A28ACBF8C00D32BDA /* ContentView.swift in Sources */,
+				7048803F28B60077001CD366 /* Enviroment.swift in Sources */,
+				70D022A228B6265C0089E7E4 /* RepositoryProvider.swift in Sources */,
+				703B199128E1463900E3753E /* ChainType.swift in Sources */,
+				70CF434028E313C000B3449C /* DetailView.swift in Sources */,
+				703B198A28E1410800E3753E /* WalletCardView.swift in Sources */,
+				7048802F28B5FE06001CD366 /* NftRepository.swift in Sources */,
+				7048802928B5F71C001CD366 /* Nft.swift in Sources */,
+				7054820328E4559600AC7CA0 /* InfoItemView.swift in Sources */,
+				70DE347528EB0AAC0099E040 /* WalletService.swift in Sources */,
+				70E5704528ACC9D300D32BDA /* NftListView.swift in Sources */,
+				70E1127828D0D1810075586D /* CreateWalletViewModel.swift in Sources */,
+				7048803128B5FE8C001CD366 /* Requestable.swift in Sources */,
+				70E1127528D0CD8E0075586D /* CreateWalletView.swift in Sources */,
+				7048805028B61800001CD366 /* NftAPI.swift in Sources */,
+				70DE347828EB0E650099E040 /* ServiceProvider.swift in Sources */,
+				7048804828B61416001CD366 /* ContentType.swift in Sources */,
+				703B198F28E144AF00E3753E /* Wallet.swift in Sources */,
+				7083405328D23C58004609D3 /* UserSettings.swift in Sources */,
+				703B199428E1493800E3753E /* EditWalletView.swift in Sources */,
+				7048802328B5F2A6001CD366 /* HomeViewModel.swift in Sources */,
+				70D0229F28B6195D0089E7E4 /* NetworkAPI.swift in Sources */,
+				7048802D28B5F8DA001CD366 /* BaseViewModel.swift in Sources */,
+				7048804B28B61539001CD366 /* Encodable+Ext.swift in Sources */,
 				70E5701828ACBF8C00D32BDA /* NfactApp.swift in Sources */,
+				7048804228B60999001CD366 /* NftRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,21 +864,24 @@
 		};
 		70E5703928ACBF8E00D32BDA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7048803A28B5FFD6001CD366 /* debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Nfact/Preview Content\"";
 				DEVELOPMENT_TEAM = X64MATB2CC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Nfact/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,27 +891,30 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		70E5703A28ACBF8E00D32BDA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7048803C28B60012001CD366 /* release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Nfact/Preview Content\"";
 				DEVELOPMENT_TEAM = X64MATB2CC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Nfact/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -467,12 +924,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		70E5703C28ACBF8E00D32BDA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 652F763C54F4FC82213B3322 /* Pods-NfactTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -498,6 +956,7 @@
 		};
 		70E5703D28ACBF8E00D32BDA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09C37FB2FAEDCA460E1AC555 /* Pods-NfactTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -523,6 +982,7 @@
 		};
 		70E5703F28ACBF8E00D32BDA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBB3F88FE75B17930005CEE3 /* Pods-Nfact-NfactUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -546,6 +1006,7 @@
 		};
 		70E5704028ACBF8E00D32BDA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEC4AED4DCE128CFABF79C52 /* Pods-Nfact-NfactUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
