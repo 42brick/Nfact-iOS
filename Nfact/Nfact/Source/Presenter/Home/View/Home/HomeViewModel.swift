@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 import Combine
 
 class HomeViewModel: ObservableObject {
@@ -14,20 +15,28 @@ class HomeViewModel: ObservableObject {
     
     @Published var isShowEditView: Bool = false
     @Published var isShowDetailView: Bool = false
+    @Published var isShowFactoryView: Bool = false
     @Published var selectedNft: Nft?
+    @Published var selectedItem: PhotosPickerItem? = nil
+    @Published var selectedImageData: Data = .init()
     
     enum Input {
         case refresh
+        case presentFactory
     }
     
     func apply(_ input: Input) {
         switch input {
         case .refresh:
             refreshSubject.send(())
+        case .presentFactory:
+            presentFactorySubject.send(())
+            
         }
     }
     
     private let refreshSubject = PassthroughSubject<Void, Never>()
+    private let presentFactorySubject = PassthroughSubject<Void, Never>()
     
     struct Output {
         var wallet: Wallet = Wallet(id: 0, name: "", address: "", symbol: .eth)
@@ -56,6 +65,16 @@ class HomeViewModel: ObservableObject {
                 
                 self.fetchWallet()
                 self.fetchNfts()
+            })
+            .store(in: &cancellables)
+        
+        presentFactorySubject
+            .receive(on: RunLoop.main, options: .none)
+            .sink(receiveValue: { [weak self] in
+                guard let `self` = self else { return }
+                
+                self.isShowFactoryView = true
+                print(self.isShowFactoryView)
             })
             .store(in: &cancellables)
     }

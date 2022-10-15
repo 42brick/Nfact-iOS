@@ -27,6 +27,8 @@
 		7048805028B61800001CD366 /* NftAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7048804F28B61800001CD366 /* NftAPI.swift */; };
 		7054820328E4559600AC7CA0 /* InfoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7054820228E4559600AC7CA0 /* InfoItemView.swift */; };
 		7083405328D23C58004609D3 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7083405228D23C58004609D3 /* UserSettings.swift */; };
+		70B0CEFD28FA92C5007D2589 /* FactoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B0CEFC28FA92C5007D2589 /* FactoryView.swift */; };
+		70B0CEFF28FAA424007D2589 /* FactoryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B0CEFE28FAA424007D2589 /* FactoryDetail.swift */; };
 		70CF434028E313C000B3449C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CF433F28E313C000B3449C /* DetailView.swift */; };
 		70D0229F28B6195D0089E7E4 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D0229E28B6195D0089E7E4 /* NetworkAPI.swift */; };
 		70D022A228B6265C0089E7E4 /* RepositoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D022A128B6265C0089E7E4 /* RepositoryProvider.swift */; };
@@ -90,6 +92,8 @@
 		7048804F28B61800001CD366 /* NftAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftAPI.swift; sourceTree = "<group>"; };
 		7054820228E4559600AC7CA0 /* InfoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoItemView.swift; sourceTree = "<group>"; };
 		7083405228D23C58004609D3 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		70B0CEFC28FA92C5007D2589 /* FactoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryView.swift; sourceTree = "<group>"; };
+		70B0CEFE28FAA424007D2589 /* FactoryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryDetail.swift; sourceTree = "<group>"; };
 		70CF433F28E313C000B3449C /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		70D0229E28B6195D0089E7E4 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		70D022A128B6265C0089E7E4 /* RepositoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryProvider.swift; sourceTree = "<group>"; };
@@ -279,6 +283,15 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		70B0CEFB28FA92BA007D2589 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				70B0CEFC28FA92C5007D2589 /* FactoryView.swift */,
+				70B0CEFE28FAA424007D2589 /* FactoryDetail.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		70CF433E28E313A800B3449C /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +438,7 @@
 				70E1127628D0CDAA0075586D /* Base */,
 				70E1127228D0CD5D0075586D /* Setting */,
 				703B199228E1492300E3753E /* EditWallet */,
+				70B0CEFB28FA92BA007D2589 /* Factory */,
 				70CF433E28E313A800B3449C /* Detail */,
 				7017EDB228B5EE790031959E /* Home */,
 			);
@@ -704,6 +718,8 @@
 				703B198F28E144AF00E3753E /* Wallet.swift in Sources */,
 				7083405328D23C58004609D3 /* UserSettings.swift in Sources */,
 				703B199428E1493800E3753E /* EditWalletView.swift in Sources */,
+				70B0CEFD28FA92C5007D2589 /* FactoryView.swift in Sources */,
+				70B0CEFF28FAA424007D2589 /* FactoryDetail.swift in Sources */,
 				7048802328B5F2A6001CD366 /* HomeViewModel.swift in Sources */,
 				70D0229F28B6195D0089E7E4 /* NetworkAPI.swift in Sources */,
 				7048802D28B5F8DA001CD366 /* BaseViewModel.swift in Sources */,
@@ -797,7 +813,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -852,7 +868,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -881,7 +897,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -914,7 +930,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
